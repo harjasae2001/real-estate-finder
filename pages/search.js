@@ -6,7 +6,7 @@ import { BsFilter } from "react-icons/bs";
 import SearchFilter from "../components/SearchFilter";
 import Property from "../components/Property";
 import noresult from "../assets/images/no-results.svg";
-import { fetchApi, baseURL } from "../utils/fetchAPI";
+import { fetchApi, baseURL } from "../utils/fetchApi";
 const Search = ({ properties }) => {
   const [searchFilter, setSearchFilter] = useState(false);
   const router = useRouter();
