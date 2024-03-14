@@ -10,7 +10,6 @@ import { fetchApi, baseURL } from "../utils/fetchApi";
 const Search = ({ properties }) => {
   const [searchFilter, setSearchFilter] = useState(false);
   const router = useRouter();
-  console.log(properties);
   return (
     <Box>
       <Flex

@@ -25,7 +25,6 @@ const PropertyDetails = ({
     area,
   },
 }) => {
-  console.log(description);
   return (
     <Box maxWidth="1000px" margin="auto" p="4">
       {photos && <ImageScrollBar data={photos} />}
