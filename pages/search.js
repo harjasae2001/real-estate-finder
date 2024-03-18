@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { Flex, Box, Text, Icon } from "@chakra-ui/react";
+import { Flex, Box, Text, Icon, useColorModeValue } from "@chakra-ui/react";
 import { BsFilter } from "react-icons/bs";
 import SearchFilter from "../components/SearchFilter";
 import Property from "../components/Property";
@@ -10,11 +10,15 @@ import { fetchApi, baseURL } from "../utils/fetchApi";
 const Search = ({ properties }) => {
   const [searchFilter, setSearchFilter] = useState(false);
   const router = useRouter();
+  const bg = useColorModeValue("gray.100", "gray.600");
+  const color = useColorModeValue("black", "white");
+  
   return (
     <Box>
       <Flex
         cursor="pointer"
-        bg="gray.100"
+        bg={bg}
+        color={color}
         borderBottom="1px"
         borderColor="gray.200"
         p="2"
@@ -31,7 +35,7 @@ const Search = ({ properties }) => {
       <Text fontSize="2xl" p="4" fontWeight="bold">
         Properties {router.query.purpose}
       </Text>
-      <Flex flexWrap="wrap">
+      <Flex flexWrap="wrap" >
         {properties.map((property) => (
           <Property property={property} key={property.id} />
         ))}

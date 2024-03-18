@@ -2,8 +2,9 @@ import Router from "next/router";
 import Head from "next/head";
 import NProgress from "nprogress";
 import { ChakraProvider } from "@chakra-ui/react";
-
+import { ColorModeScript } from '@chakra-ui/react'
 import Layout from "../components/Layout";
+import theme from "../theme";
 
 function MyApp({ Component, pageProps }) {
   NProgress.configure({ showSpinner: false });
@@ -28,6 +29,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <ChakraProvider>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Layout>
           <Component {...pageProps} />
         </Layout>

@@ -8,10 +8,12 @@ import {
   Flex,
   Box,
   Spacer,
+  Button
 } from "@chakra-ui/react";
 import { FcMenu, FcHome, FcAbout } from "react-icons/fc";
 import { BsSearch } from "react-icons/bs";
 import { FiKey } from "react-icons/fi";
+import ToggleColorMode from "./ToggleColorMode";
 
 const Navbar = () => (
   <Flex p="2" borderBottom="1px" borderColor="gray.100">
@@ -21,11 +23,12 @@ const Navbar = () => (
       </Link>
     </Box>
     <Spacer />
+    <ToggleColorMode />
     <Box>
       <Menu>
         <MenuButton
           as={IconButton}
-          icon={<FcMenu />}
+          icon={<Button bg="transparent"><FcMenu /></Button>}
           variant="outlined"
           color="red.400"
         />
