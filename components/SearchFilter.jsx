@@ -8,7 +8,7 @@ import {
   Spinner,
   Icon,
   Button,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { MdCancel } from "react-icons/md";
@@ -149,6 +149,20 @@ const SearchFilter = () => {
           </Flex>
         )}
       </Flex>
+      {filterData && (
+        <Flex>
+          <Button
+            onClick={() => {
+              router.push(router.pathname);
+            }}
+            border="1px"
+            borderColor="gray.200"
+            marginTop="2"
+          >
+            Reset
+          </Button>
+        </Flex>
+      )}
     </Flex>
   );
 };
